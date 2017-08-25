@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>惠发科技</title>
+    <link href="css/pcstyle.css" rel="stylesheet">
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=djFBu4vgBKRGXP4z4KDYiGxRdz0sF5CL"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+</head>
+<body>
+    <div class="wrap">
+            <header>
+                <div class="head">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="images/pclogo.png" >
+                        </a>
+                    </div>
+                    <ul class="iconbox">
+                        <li class="icon icon1"></li>
+                        <li class="icon icon2"></li>
+                        <li class="icon icon3"></li>
+                        <li class="icon icon4"></li>
+                        <li class="icon icon5"></li>
+                    </ul>
+                </div>
+            </header>
+        <nav>
+            <ul class="nav" id="nav">
+                <li class="active">首页</li>
+                <li class="pr" id="dsj">大数据 <i></i>
+                    <div class="ycbox pa">
+                        <p><a href="shop.html">SHOP+</a></p>
+                        <p><a href="yuncaiji.html">云采集</a></p>
+                        <p><a href="yuntuijian.html">云推荐</a></p>
+                        <p><a href="seach.html">智能搜索</a></p>
+                        <p style="border-bottom: none"><a href="zrwd.html">自然语言问答</a></p>
+                    </div>
+                </li>
+                <li>公司动态</li>
+                <li>项目案例</li>
+                <li>联系我们</li>
+            </ul>
+        </nav>
+        <div class="swiper-container swiper-container-horizontal">
+            <div class="swiper-wrapper" id="banner">
+                <div class="swiper-slide">
+                    <a href="">
+                        <img src="images/banner.png">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="">
+                        <img src="images/banner.png">
+                    </a>
+                </div>
+              </div>
+            <div class="swiper-pagination" style="position: absolute;bottom: 10px"></div>
+        </div>
+        <div class="gsdt" id="gsdt">
+            <img src="images/pcimg1.jpg" >
+            <img src="images/pcimg2.jpg" >
+        </div>
+        <div class="bj pr">
+            <img src="images/pcimg3.png " >
+        </div>
+        <div class="wmys">
+            <img src="images/pcimg4.jpg" >
+            <img src="images/pcimg5.jpg" >
+        </div>
+        <div class="bj1">
+            <img src="images/pcimg6.png" >
+        </div>
+        <div class="wmys2">
+            <img src="images/pcimg7.jpg" >
+            <img src="images/pcimg8.jpg" >
+        </div>
+        <div class="wmys">
+            <img src="images/pcimg9.jpg" >
+            <img src="images/pcimg10.jpg" >
+        </div>
+        <div class="wmys2">
+            <img src="images/pcimg11.jpg" >
+            <img src="images/pcimg12.jpg" >
+        </div>
+
+        <div class="hzxm">
+            <img src="images/hzwz.png" class="wz" >
+            <ul class="pcbox">
+                <li><img src="images/pcimgicon1.png" ></li>
+                <li><img src="images/pcimgicon2.png" ></li>
+                <li><img src="images/pcimgicon3.png" ></li>
+                <li><img src="images/pcimgicon4.png" ></li>
+                <li><img src="images/pcimgicon5.png" ></li>
+                <li><img src="images/pcimgicon6.png" ></li>
+                <li><img src="images/pcimgicon7.png" ></li>
+                <li><img src="images/pcimgicon8.png" ></li>
+                <li><img src="images/pcimgicon9.png" ></li>
+                <li><img src="images/pcimgicon10.png" ></li>
+                <li><img src="images/pcimgicon11.png"></li>
+                <li><img src="images/pcimgicon12.png"></li>
+                <li><img src="images/pcimgicon13.png"></li>
+                <li><img src="images/pcimgicon14.png"></li>
+                <li><img src="images/pcimgicon15.png"></li>
+            </ul>
+        </div>
+        <div class="wmys" style="padding-top: 0" id="lxwm">
+            <img src="images/lxwm.jpg" style="width: 233px;">
+        </div>
+        <div id="allmap"></div>
+        <div id="result">
+            <input type="button" value="默认样式" onclick="searchInfoWindow.open(marker);"/>
+            <!--<input type="button" value="样式1" onclick="openInfoWindow1()"/>-->
+            <!--<input type="button" value="样式2" onclick="openInfoWindow2()"/>-->
+            <!--<input type="button" value="样式3" onclick="openInfoWindow3()"/>-->
+        </div>
+    </div>
+    <div class="fd-copy">
+        <div class="wp">
+            <p class="tc"> <span>Copyright © 2012-2017  北京惠发科技有限公司 版权所有 </span><a href="#"><span>京ICP备15024353号-1</span></a> <a href="#"></a> </p>
+        </div>
+    </div>
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script>
+    $(function () {
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            //spaceBetween: 10,
+            centeredSlides: true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false,
+            loop:true
+        });
+        var num=0;
+        var Height=140;
+        $(window).scroll(function(event) {
+            num=$(document).scrollTop();
+            if(num>=Height)
+            {
+                $("nav").css({"position":"fixed","top":"0px"})
+            }
+            else{
+                $("nav").css({"position":"absolute","top":"140px"})
+            }
+        });
+       //
+        $("#dsj").hover(function () {
+            $(this).find("div").stop().slideDown(500);
+        },
+        function () {
+            $(this).find("div").stop().slideUp(500);
+        })
+        $("img").attr("ondragstart","return false");
+        $("#nav li").click(function() {
+            var index=$(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            if(index===0){
+                $("body,html").stop().animate({
+                    "scrollTop":"0"
+                },1000);
+            }
+            else if(index===2){
+                $("body,html").stop().animate({
+                    "scrollTop":$("#gsdt").offset().top-80
+                },1000);
+            }
+            else if(index===3){
+                $("body,html").stop().animate({
+                    "scrollTop":$(".bj1").offset().top-555
+                },1000);
+            }
+            else if(index===4){
+                $("body,html").stop().animate({
+                    "scrollTop":$("#lxwm").offset().top-80
+                },1000);
+            }
+        });
+    });
+
+//    (function (w) {
+//        //百度地图API功能
+//        function loadJScript() {
+//            var script = document.createElement("script");
+//            script.type = "text/javascript";
+//            script.src = "http://api.map.baidu.com/api?v=2.0&ak=djFBu4vgBKRGXP4z4KDYiGxRdz0sF5CL&callback=init";
+//            document.body.appendChild(script);
+//
+//        }
+//        //创建检索信息窗口对象
+//        w.init = init;
+//
+//        function init() {
+//            var map = new BMap.Map("allmap");            // 创建Map实例
+//            var point = new BMap.Point(116.504976,39.990515); // 创建点坐标
+//            map.centerAndZoom(point, 15);
+//            map.enableScrollWheelZoom();                 //启用滚轮放大缩小
+//            map.centerAndZoom(point, 12);
+//            var marker = new BMap.Marker(point);  // 创建标注
+//            map.addOverlay(marker);              // 将标注添加到地图中
+//            marker.addEventListener("click", getAttr);
+//            marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+//
+//            function getAttr() {
+//                var p = marker.getPosition();       //获取marker的位置
+//                //alert("marker的位置是" + p.lng + "," + p.lat);
+//            }
+//        }
+//
+//        w.onload = loadJScript;  //异步加载地图
+//    })(window);
+    var map = new BMap.Map('allmap');
+    var poi = new BMap.Point(116.307852,40.057031);
+    map.centerAndZoom(poi, 16);
+    map.enableScrollWheelZoom();
+
+    var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+        '<img src="../img/baidu.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+        '地址：北京市海淀区上地十街10号<br/>电话：(010)59928888<br/>简介：百度大厦位于北京市海淀区西二旗地铁站附近，为百度公司综合研发及办公总部。' +
+        '</div>';
+
+    //创建检索信息窗口对象
+    var poi = new BMap.Point(116.307852,40.057031);
+    map.centerAndZoom(poi, 16);
+    map.enableScrollWheelZoom();
+
+    var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+        '<img src="../img/baidu.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+        '地址：北京市海淀区上地十街10号<br/>电话：(010)59928888<br/>简介：百度大厦位于北京市海淀区西二旗地铁站附近，为百度公司综合研发及办公总部。' +
+        '</div>';
+
+    //创建检索信息窗口对象
+    var searchInfoWindow = null;
+    searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+        title  : "百度大厦",      //标题
+        width  : 290,             //宽度
+        height : 105,              //高度
+        panel  : "panel",         //检索结果面板
+        enableAutoPan : true,     //自动平移
+        searchTypes   :[
+            BMAPLIB_TAB_SEARCH,   //周边检索
+            BMAPLIB_TAB_TO_HERE,  //到这里去
+            BMAPLIB_TAB_FROM_HERE //从这里出发
+        ]
+    });
+    var marker = new BMap.Marker(poi); //创建marker对象
+    marker.enableDragging(); //marker可拖拽
+    marker.addEventListener("click", function(e){
+        searchInfoWindow.open(marker);
+    })
+    map.addOverlay(marker); //在地图中添加marker
+    //样式1
+    var searchInfoWindow1 = new BMapLib.SearchInfoWindow(map, "信息框1内容", {
+        title: "信息框1", //标题
+        panel : "panel", //检索结果面板
+        enableAutoPan : true, //自动平移
+        searchTypes :[
+            BMAPLIB_TAB_FROM_HERE, //从这里出发
+            BMAPLIB_TAB_SEARCH   //周边检索
+        ]
+    });
+    function openInfoWindow1() {
+        searchInfoWindow1.open(new BMap.Point(116.319852,40.057031));
+    }
+    //样式2
+    var searchInfoWindow2 = new BMapLib.SearchInfoWindow(map, "信息框2内容", {
+        title: "信息框2", //标题
+        panel : "panel", //检索结果面板
+        enableAutoPan : true, //自动平移
+        searchTypes :[
+            BMAPLIB_TAB_SEARCH   //周边检索
+        ]
+    });
+    function openInfoWindow2() {
+        searchInfoWindow2.open(new BMap.Point(116.324852,40.057031));
+    }
+    //样式3
+    var searchInfoWindow3 = new BMapLib.SearchInfoWindow(map, "信息框3内容", {
+        title: "信息框3", //标题
+        width: 290, //宽度
+        height: 40, //高度
+        panel : "panel", //检索结果面板
+        enableAutoPan : true, //自动平移
+        searchTypes :[
+        ]
+    });
+    function openInfoWindow3() {
+        searchInfoWindow3.open(new BMap.Point(116.328852,40.057031));
+    }
+</script>
+</body>
+</html>

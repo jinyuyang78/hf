@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>惠发科技--自然语言问答</title>
+    <link href="css/pcstyle.css" rel="stylesheet">
+    <link href="css/swiper.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap">
+            <header>
+                <div class="head">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="images/pclogo.png" >
+                        </a>
+                    </div>
+                    <ul class="iconbox">
+                        <li class="icon icon1"></li>
+                        <li class="icon icon2"></li>
+                        <li class="icon icon3"></li>
+                        <li class="icon icon4"></li>
+                        <li class="icon icon5"></li>
+                    </ul>
+                </div>
+            </header>
+        <nav>
+            <ul class="nav" id="nav">
+                <li >首页</li>
+                <li class="pr active" id="dsj">大数据 <i></i>
+                    <div class="ycbox pa">
+                        <p><a href="shop.html">SHOP+</a></p>
+                        <p><a href="yuncaiji.html">云采集</a></p>
+                        <p><a href="yuntuijian.html">云推荐</a></p>
+                        <p><a href="seach.html">智能搜索</a></p>
+                        <p style="border-bottom: none"><a href="zrwd.html">自然语言问答</a></p>
+                    </div>
+                </li>
+                <li>公司动态</li>
+                <li>项目案例</li>
+                <li>联系我们</li>
+            </ul>
+        </nav>
+
+        <div class="bj3">
+            <img src="images/prodect.png">
+        </div>
+
+        <div class="col-md-12  text-center gtco-heading " id="font">
+            <h2 style=" border-bottom: 1px solid #dedede;width: 100%;">自然语言问答</h2>
+        </div>
+
+        <div class="container">
+            <div class="col-md-5">
+                <img src="images/slide1.png" class="img-responsive">
+            </div>
+            <div class="col-md-7 language-list">
+                <div>
+                    <ul>
+                        <!-- <h1>介绍</h1> -->
+                        <li><span><img src="images/dg.jpg" style="width: 30px;"></span>
+                            自然语言问答系统将自然语言理解、机器学习与大数据技术进行了有效整合。</li>
+                        <li><span><img src="images/dg.jpg" style="width: 30px;"></span>可以更精确的理解，更精确地回答基于全新优化的语义分析算法，可以准确理解用户问题，进行精准的回答。</li>
+                        <li><span><img src="images/dg.jpg" style="width: 30px;"></span>支持语料库自定义用户可以方便的导入和维护语料库，方便用户冷启动，和数据移植。</li>
+                        <li><span><img src="images/dg.jpg" style="width: 30px;"></span>有价值的统计分析对积累的大量数据进行深度分析，挖掘出关注点，便于管理作出优化调整。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fd-copy">
+        <div class="wp">
+            <p class="tc"> <span>Copyright © 2012-2017  北京惠发科技有限公司 版权所有 </span><a href="#"><span>京ICP备15024353号-1</span></a> <a href="#"></a> </p>
+        </div>
+    </div>
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script>
+    $(function () {
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            //spaceBetween: 10,
+            centeredSlides: true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false,
+            loop:true
+        });
+        var num=0;
+        var Height=140;
+        $(window).scroll(function(event) {
+            num=$(document).scrollTop();
+            if(num>=Height)
+            {
+                $("nav").css({"position":"fixed","top":"0px"})
+            }
+            else{
+                $("nav").css({"position":"absolute","top":"140px"})
+            }
+        });
+       //
+        $("#dsj").hover(function () {
+            $(this).find("div").stop().slideDown(500);
+        },
+        function () {
+            $(this).find("div").stop().slideUp(500);
+        })
+        $("img").attr("ondragstart","return false");
+        $("#nav li").click(function() {
+            var index=$(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            if(index===0){
+               window.location.href="index.html"
+            }
+            else if(index===2){
+                window.location.href="index.html"
+            }
+            else if(index===3){
+                window.location.href="index.html"
+            }
+            else if(index===4){
+                window.location.href="index.html"
+            }
+        });
+    });
+</script>
+</body>
+</html>
